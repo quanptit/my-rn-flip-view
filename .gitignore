@@ -5,7 +5,9 @@
 # Xcode
 #
 build/
+Pods/
 *.pbxuser
+*._*
 !default.pbxuser
 *.mode1v3
 !default.mode1v3
@@ -21,6 +23,8 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
+yarn.lock
+package-lock.json
 
 # Android/IntelliJ
 #
@@ -28,7 +32,7 @@ build/
 .idea
 .gradle
 local.properties
-
+*.iml
 
 # node.js
 #
@@ -51,3 +55,6 @@ buck-out/
 */fastlane/report.xml
 */fastlane/Preview.html
 */fastlane/screenshots
+
+# Bundle artifact
+*.jsbundle

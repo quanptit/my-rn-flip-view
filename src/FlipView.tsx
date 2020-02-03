@@ -1,7 +1,6 @@
-import React, {Component, PureComponent} from 'react';
+import React, {Component} from 'react';
 import {Easing, Animated, StyleSheet, Platform, View, ViewProps} from 'react-native';
 import {isIOS, sendError} from "my-rn-base-utils";
-import {ComponentNoUpdate} from "my-rn-base-component";
 
 interface Props extends ViewProps {
     flipDuration?: number
@@ -10,7 +9,7 @@ interface Props extends ViewProps {
     front?: any
     back?: any
     perspective?: number
-    onFlip?: VoidFunction
+    onFlip?: () => void
     onFlipped?: (isFlipped: boolean) => void
     isFlipped?: boolean
 }
@@ -140,7 +139,7 @@ export class FlipView extends Component<Props, States> {
     }
 
     _animateValue = (animatedValue, toValue, easing) => {
-        if (animatedValue==null){
+        if (animatedValue == null) {
             sendError("_animateValue animatedValue NULL");
             return null;
         }
